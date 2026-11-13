@@ -1,44 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marco P Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Marco Pernisco, software engineer and Computer Science master’s student in Pisa. Exploring new ideas, learning by building and growing through collaboration.">
+  <meta property="og:title" content="Marco Pernisco — Software Engineer">
+  <meta property="og:description" content="Curious mind. Always learning. Explore the projects, questions and experiences shaping my journey in software engineering.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <title>Marco Pernisco — Software Engineer</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Marco P</h1>
-        <p>Software Developer | Web Enthusiast</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Marco Pernisco, home"><span class="brand-mark">mp<span>.</span></span><span class="brand-name">Marco Pernisco<span>Software engineer</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About me</a>
+        <a href="#contact">Let’s talk ↗</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#projects">Projects</a><a href="blog.html">Blog</a><a href="#about">About me</a><a href="#contact">Let’s talk ↗</a>
     </nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Marco, a passionate developer focused on building modern web applications. I love learning new technologies and creating beautiful, functional websites.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Personal Blog</strong> - A blog built with static site generators.</li>
-                <li><strong>Weather App</strong> - A simple app to check the weather in your city.</li>
-                <li><strong>Portfolio Website</strong> - This website!</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:marco@example.com">marco@example.com</a></p>
-            <p>GitHub: <a href="https://github.com/Marcop-00" target="_blank">Marcop-00</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Marco P. All rights reserved.</p>
-    </footer>
+  </header>
+  <main id="main">
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="small-cross" aria-hidden="true">✳</span><span>MARCO PERNISCO · SOFTWARE ENGINEER</span></div>
+        <h1 id="hero-title"><span>Curious mind.</span><span class="blue-text">Always learning.</span></h1>
+        <p class="hero-description">Hi, I’m Marco. I’m a Computer Science master’s student who enjoys understanding how things work. I learn by building, exploring new ideas and exchanging perspectives with the people around me.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#projects"><span>Explore my projects</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/Marcop-00" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-location"><span class="location-dot" aria-hidden="true"></span><span>Pisa, Italy</span><span class="location-separator">/</span><span>MSc Computer Science @ University of Pisa</span></div>
+      </div>
+      <div class="system-art" aria-label="A portrait of Marco Pernisco outdoors">
+        <div class="art-header"><span class="mono">FIG. 01 — <span>OUTSIDE THE EDITOR</span></span><span class="art-cross" aria-hidden="true">+</span></div>
+        <div class="system-scene">
+          <img class="system-photo" src="IMG_0082.jpeg" width="2316" height="3088" fetchpriority="high" alt="Marco Pernisco outdoors">
+        </div>
+      </div>
+    </section>
+    <div class="focus-strip"><div class="container"><span class="mono strip-label">WHAT I’M EXPLORING</span><span>Full-stack development</span><span class="strip-cross" aria-hidden="true">+</span><span>DevOps</span><span class="strip-cross" aria-hidden="true">+</span><span>Distributed systems</span><span class="strip-cross" aria-hidden="true">+</span><span>Data & machine learning</span></div></div>
+    <section class="projects-section container section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="section-kicker"><span>01 /</span><span>PROJECTS &amp; EXPLORATIONS</span></p><h2 id="projects-title">Exploring through code.</h2></div><p class="section-intro">A few projects that helped me explore new tools, connect ideas and turn questions into working software.</p></div>
+      <div class="projects-toolbar"><div class="project-filters" role="group" aria-label="Filter projects"><button class="filter is-active" type="button" data-filter="all" aria-pressed="true"><span>All</span><span class="filter-count">04</span></button><button class="filter" type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button><button class="filter" type="button" data-filter="systems" aria-pressed="false">Systems</button><button class="filter" type="button" data-filter="data" aria-pressed="false">Data</button></div><span class="mono project-count" aria-live="polite">04 <span>PROJECTS</span></span></div>
+      <div class="project-grid">
+        <article class="project-card" data-category="fullstack">
+          <button class="project-visual restaurant-visual" type="button" data-project="restaurant" aria-label="Explore Hildesheimer Geschmack">
+            <span class="visual-topline mono">FULL-STACK APPLICATION <span>01</span></span>
+            <span class="restaurant-art" aria-hidden="true"><span class="restaurant-wordmark">hildesheimer<span>geschmack.</span><small>GOOD FOOD. GOOD SYSTEMS.</small></span><span class="plate"><span class="plate-center"><i class="leaf leaf-one"></i><i class="leaf leaf-two"></i><i class="leaf leaf-three"></i><i class="tomato tomato-one"></i><i class="tomato tomato-two"></i><i class="pasta pasta-one"></i><i class="pasta pasta-two"></i><i class="pasta pasta-three"></i></span></span><span class="restaurant-star">✳</span><span class="restaurant-ticket"><span>THE RECIPE</span><b>Angular + Node.js</b><i></i><small>UI → API → DATABASE</small></span></span>
+            <span class="visual-bottomline mono">FROM MENU TO MANAGEMENT</span><span class="visual-arrow" aria-hidden="true">↗</span>
+          </button>
+          <div class="project-info"><p class="project-type">WEB DEVELOPMENT · UNIVERSITY PROJECT</p><h3><button type="button" data-project="restaurant">Hildesheimer Geschmack <span aria-hidden="true">↗</span></button></h3><p>Building a restaurant application to explore how interfaces, APIs and databases work together.</p><div class="tags"><span>Angular</span><span>Node.js</span><span>MySQL</span><span>Cypress</span></div></div>
+        </article>
+        <article class="project-card" data-category="systems">
+          <button class="project-visual lending-visual" type="button" data-project="lending" aria-label="Explore Decentralised Lending">
+            <span class="visual-topline mono">DECENTRALISED LENDING <span>02</span></span>
+            <span class="lending-art" aria-hidden="true"><svg viewBox="0 0 500 230"><path d="M82 114H186M300 114H416M242 60V25H416V76M242 164V207H82V149"/><circle cx="82" cy="114" r="35"/><circle cx="416" cy="114" r="35"/><rect x="185" y="59" width="114" height="110" rx="13"/><text x="82" y="121" class="coin-symbol">₿</text><text x="416" y="121" class="loan-symbol">Ξ</text><path class="diamond" d="M242 79L260 109L242 120L224 109ZM224 114L242 127L260 114L242 148Z"/><circle class="node" cx="416" cy="25" r="4"/><circle class="node" cx="82" cy="207" r="4"/><text x="82" y="170" class="diagram-label">ORACLE</text><text x="242" y="192" class="diagram-label">FUNDING POOL</text><text x="416" y="170" class="diagram-label">LOAN</text></svg></span>
+            <span class="visual-bottomline mono">EXPLORING SMART CONTRACTS.</span><span class="visual-arrow" aria-hidden="true">↗</span>
+          </button>
+          <div class="project-info"><p class="project-type">BLOCKCHAIN · UNIVERSITY PROJECT</p><h3><button type="button" data-project="lending">Decentralised Lending <span aria-hidden="true">↗</span></button></h3><p>Exploring smart contracts, voting and upgradeability through an ETH lending system with a Python oracle.</p><div class="tags"><span>Solidity</span><span>Python</span><span>Ethereum</span><span>Hardhat</span></div></div>
+        </article>
+        <article class="project-card" data-category="systems">
+          <button class="project-visual game-visual" type="button" data-project="game" aria-label="Explore Microservices Card Game">
+            <span class="visual-topline mono">MICROSERVICES CARD GAME <span>03</span></span>
+            <span class="game-art" aria-hidden="true"><span class="game-ring"></span><span class="playing-card card-back"><span>✳</span></span><span class="playing-card card-front"><span class="card-corner">A<br>♠</span><span class="card-suit">♠</span><span class="card-corner corner-bottom">A<br>♠</span></span><span class="service-chip chip-engine"><span></span>game.engine</span><span class="service-chip chip-queue"><span></span>message.queue</span></span>
+            <span class="visual-bottomline mono">MANY SERVICES. ONE GAME.</span><span class="visual-arrow" aria-hidden="true">↗</span>
+          </button>
+          <div class="project-info"><p class="project-type">DISTRIBUTED SYSTEMS · TEAM PROJECT</p><h3><button type="button" data-project="game">Microservices Card Game <span aria-hidden="true">↗</span></button></h3><p>Learning how services work together through a team-built card game. My focus: game engine, integration support, tests and CI.</p><div class="tags"><span>Python</span><span>Docker</span><span>RabbitMQ</span><span>GitHub Actions</span></div></div>
+        </article>
+        <article class="project-card" data-category="data">
+          <button class="project-visual music-visual" type="button" data-project="music" aria-label="Explore Music Data Analysis">
+            <span class="visual-topline mono">MUSIC DATA ANALYSIS <span>04</span></span>
+            <span class="music-art" aria-hidden="true"><span class="record"><span class="record-label">DATA<br><em>in rotation.</em><span>33⅓ RPM</span></span></span><span class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="music-note">♪</span></span>
+            <span class="visual-bottomline mono">LISTEN TO THE DATA.</span><span class="visual-arrow" aria-hidden="true">↗</span>
+          </button>
+          <div class="project-info"><p class="project-type">DATA MINING · TEAM PROJECT</p><h3><button type="button" data-project="music">Music Data Analysis <span aria-hidden="true">↗</span></button></h3><p>Exploring the patterns in music data, from preprocessing to classification and model interpretation.</p><div class="tags"><span>Python</span><span>scikit-learn</span><span>Pandas</span><span>SHAP</span></div></div>
+        </article>
+      </div>
+      <a class="all-code-link" href="https://github.com/Marcop-00" target="_blank" rel="noopener noreferrer"><span>More experiments and code on GitHub</span><span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="about-section section" id="about" aria-labelledby="about-title"><div class="container about-grid">
+      <div class="about-heading"><p class="section-kicker"><span>02 /</span><span>THE PERSON BEHIND THE CODE</span></p><h2 id="about-title"><span>Learning by doing.</span><br><span class="muted-text">And from others.</span></h2><div class="personal-note"><span class="note-asterisk" aria-hidden="true">✳</span><p>Away from the editor? I sing in the University of Pisa choir and play the violin.</p></div></div>
+      <div class="about-content"><p class="about-lead">I enjoy the moment when something unfamiliar starts to make sense.</p><p>My studies at the University of Pisa have taken me from web applications to distributed systems and data analysis. Each project gives me another way to understand software: by making choices, testing them and working out what I could improve.</p><p>I’ve learned from teammates at university, colleagues during my Apuliasoft internship and people I met on Erasmus in Hildesheim. I’m keen to keep exploring, listen to different perspectives and put what I learn into practice.</p></div>
+    </div></section>
+    <section class="journey-section container section" aria-labelledby="journey-title"><div class="journey-layout"><div><p class="section-kicker"><span>03 /</span><span>A JOURNEY IN PROGRESS</span></p><h2 id="journey-title">A few steps so far.</h2></div><div class="timeline">
+      <article class="timeline-item"><span class="timeline-date mono">2023 — PRESENT</span><div><h3>MSc in Computer Science</h3><p class="timeline-place">University of Pisa</p><p>Software engineering, web applications, distributed systems and data mining.</p></div><span class="timeline-symbol" aria-hidden="true">↗</span></article>
+      <article class="timeline-item"><span class="timeline-date mono">2024 — 2025</span><div><h3>Erasmus+</h3><p class="timeline-place">Universität Hildesheim</p><p>A semester in Germany, exploring full-stack development and international collaboration.</p></div><span class="timeline-symbol" aria-hidden="true">↗</span></article>
+      <article class="timeline-item"><span class="timeline-date mono">2023 — 2024</span><div><h3>Full-stack Developer Intern</h3><p class="timeline-place">Apuliasoft</p><p>Five months of full-stack training and one month contributing to an internal work management application.</p></div><span class="timeline-symbol" aria-hidden="true">↗</span></article>
+      <article class="timeline-item"><span class="timeline-date mono">2019 — 2023</span><div><h3>BSc in Computer Science and Digital Communication</h3><p class="timeline-place">University of Bari</p><p>Thesis on educational data analysis with machine learning, studying student behaviour and predicting exam outcomes.</p></div><span class="timeline-symbol" aria-hidden="true">↗</span></article>
+    </div></div></section>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-inner"><div><p class="section-kicker"><span>04 /</span><span>LET’S EXCHANGE IDEAS</span></p><h2 id="contact-title"><span>Have an idea?</span><br><span>Let’s talk.</span><span class="contact-spark" aria-hidden="true">✳</span></h2><p>I’d love to hear about a new challenge, a team where I could contribute and learn, or an idea we could explore together.</p></div><div class="contact-actions"><a class="email-link" href="mailto:marcopernisco.work@gmail.com">marcopernisco.work@gmail.com <span aria-hidden="true">↗</span></a><button class="copy-email" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M15 8V4H4v11h4"/></svg><span>Copy email address</span></button><div class="social-links"><a href="https://github.com/Marcop-00" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/marcopernisco/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div><p class="copy-status" role="status" aria-live="polite"></p></div></div></section>
+  </main>
+  <footer class="site-footer container"><a href="#home" class="footer-brand">mp<span>.</span></a><p>© <span id="current-year">2026</span> Marco Pernisco</p><p class="footer-note">Made with care. Always a work in progress.</p><a href="#home" class="back-top"><span>Back to top</span> ↑</a></footer>
+  <dialog class="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button class="dialog-close" type="button" aria-label="Close project details">×</button><p class="section-kicker" id="dialog-category"></p><h2 id="dialog-title"></h2><p id="dialog-summary" class="dialog-summary"></p><div class="dialog-detail"><h3>THE PROJECT</h3><p id="dialog-context"></p></div><div class="dialog-detail"><h3>MY CONTRIBUTION</h3><p id="dialog-contribution"></p></div><div class="tags" id="dialog-tags"></div><a id="dialog-source" class="button button-primary" target="_blank" rel="noopener noreferrer"><span>Explore the code</span><span aria-hidden="true">↗</span></a></div></dialog>
 </body>
 </html>
