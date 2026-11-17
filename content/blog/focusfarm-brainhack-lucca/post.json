@@ -1,13 +1,62 @@
 {
-  "draft": true,
+  "draft": false,
   "title": "FocusFarm at BrainHack Lucca",
   "category": "Projects",
-  "date": { "type": "experience", "value": "2025" },
-  "description": "",
-  "paragraphs": [],
-  "tags": ["BrainHack"],
-  "linkedinUrl": "",
-  "cover": null,
-  "images": [],
-  "links": []
+  "date": {
+    "type": "experience",
+    "value": "2025-12"
+  },
+  "description": "At BrainHack Lucca 2025, my teammates and I built a neurofeedback game that used live EEG readings to grow a virtual garden.",
+  "paragraphs": [
+    "Wrapping up three intensive days of coding, troubleshooting, and collaboration at BrainHack Lucca 2025, hosted by the IMT School for Advanced Studies (Scuola IMT Alti Studi Lucca)! Transforming a raw idea into a working prototype in less than a week was a huge challenge, and seeing it come to life on stage was an unforgettable experience.",
+    "I worked with Maggie Bowen, Sojoud Jebril and Marco Fioretti to build FocusFarm, a neurofeedback interface designed to help students dial in and 'grow' their concentration skills. As the focus score went up, the virtual plants grew.",
+    "We started by recording an EEG baseline with the NeuroPawn Biopotential Kit. The prototype estimated alpha-band power (8–12 Hz) from the EEG spectrum, then used a z-score to compare live readings with the baseline. We mapped that value to an experimental focus score that drove the game.",
+    "A huge thank you to Michele Romani for showing us how to set up the NeuroPawn and trusting us to bring it to the BrainHack, and to the entire team for the relentless hard work and creativity throughout the week."
+  ],
+  "tags": [
+    "BrainHack",
+    "Neurofeedback",
+    "EEG",
+    "BCI",
+    "NeuroPawn",
+    "Python"
+  ],
+  "linkedinUrl": "https://www.linkedin.com/posts/marcopernisco_wrapping-up-3-intensive-days-of-coding-and-ugcPost-7402796849394237440-_8AO/",
+  "cover": "1765020104148.jpeg",
+  "images": [
+    {
+      "file": "1765020104148.jpeg",
+      "alt": "A screenshot of the FocusFarm neurofeedback interface showing a virtual plant growing.",
+      "width": 1459,
+      "height": 828
+    },
+    {
+      "file": "1765020105370.jpeg",
+      "alt": "A FocusFarm setup with an EEG headset and laptop displaying the virtual garden interface.",
+      "width": 1152,
+      "height": 1536
+    },
+    {
+      "file": "1766129333825.jpeg",
+      "alt": "A participant wearing the NeuroPawn EEG headset during a FocusFarm session.",
+      "width": 1432,
+      "height": 649
+    },
+    {
+      "file": "1766129333914.jpeg",
+      "alt": "The NeuroPawn EEG headset and laptop displaying live brain-signal data.",
+      "width": 1424,
+      "height": 793
+    }
+  ],
+  "links": [
+    {
+      "label": "FocusFarm demo video",
+      "url": "https://www.youtube.com/watch?v=foF9tnx_bp4"
+    },
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/maggiebowen/EEG-focus-interface"
+    }
+  ]
 }
