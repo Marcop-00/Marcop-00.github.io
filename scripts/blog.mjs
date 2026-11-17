@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { copyFile, lstat, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 
-const site = 'https://marcop-00.github.io/';
+export const site = 'https://marcop-00.github.io/';
 const categories = ['Experiences', 'Projects', 'Space', 'Events'];
 const dateLabels = { experience: 'Experience date', linkedin: 'LinkedIn post date' };
 const blogTitle = 'Blog — Marco Pernisco';

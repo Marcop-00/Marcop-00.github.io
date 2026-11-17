@@ -64,6 +64,10 @@ Create `content/blog/<slug>/post.json` and place the article’s web-ready photo
 
 Before pushing the blog to `main`, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` builds and publishes `dist/` on pushes to `main`. If the commit is already on GitHub, select **Actions → Deploy portfolio to GitHub Pages → Run workflow** and choose `main`. [GitHub Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 
+## Search engines
+
+The build copies `robots.txt` to the site root and generates `sitemap.xml` with the home page, blog archive and published articles. Drafts are excluded, and the sitemap updates automatically on each build. After deployment, submit `https://marcop-00.github.io/sitemap.xml` in Google Search Console. Keep the Google verification meta tag in `index.html` to retain ownership verification.
+
 ## Verification and packaging
 
 ```sh
