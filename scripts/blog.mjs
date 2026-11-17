@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { copyFile, lstat, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 
 const site = 'https://marcop-00.github.io/';
@@ -200,8 +201,15 @@ function renderGalleryDialog(post) {
 }
 
 export async function writeBlog(root, output, posts) {
-  const template = await readFile(new URL('scripts/templates/blog.html', root), 'utf8');
-  const page = values => template.replace(/{{(\w+)}}/g, (_, key) => values[key]);
+  const [template, stylesheet] = await Promise.all([
+    readFile(new URL('scripts/templates/blog.html', root), 'utf8'),
+    readFile(new URL('style.css', output))
+  ]);
+  const styleVersion = createHash('sha256').update(stylesheet).digest('hex').slice(0, 12);
+  const page = values => {
+    const fields = { ...values, styleVersion };
+    return template.replace(/{{(\w+)}}/g, (_, key) => fields[key]);
+  };
   const shareImage = { path: 'assets/favicon.png', alt: 'Marco Pernisco portfolio logo' };
   await writeFile(new URL('blog.html', output), page({
     metadata: renderMetadata(blogTitle, blogDescription, 'blog.html', shareImage),
