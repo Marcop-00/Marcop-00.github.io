@@ -1,13 +1,85 @@
 {
-  "draft": true,
-  "title": "Automotive Software Summer School at Porsche Engineering",
+  "draft": false,
+  "title": "Automotive Software Summer School 2024",
   "category": "Experiences",
-  "date": { "type": "experience", "value": "2024" },
-  "description": "",
-  "paragraphs": [],
-  "tags": ["Automotive software"],
-  "linkedinUrl": "",
-  "cover": null,
-  "images": [],
-  "links": []
+  "date": {
+    "type": "experience",
+    "value": "2024"
+  },
+  "description": "Two intensive weeks of lectures, workshops, and a hands-on AI hackathon hosted by the University of Salento and Nardò Technical Center (Porsche Engineering), culminating in an exclusive visit to the NTC proving ground.",
+  "paragraphs": [
+    "Taking part in the second edition of the Automotive Software Summer School 2024, hosted by the University of Salento (Università del Salento) in Lecce and the Nardò Technical Center (NTC), was an unforgettable dive into the future of software-based automotive technologies.",
+    "Alongside 25 other international students and professionals, the program kicked off with an intensive week of theoretical lectures and hands-on workshops at the university, exploring emerging trends and software engineering challenges in the mobility sector.",
+    "During the second week at the Nardò Technical Center, we put theory into practice through a competitive hackathon. Divided into four teams, we programmed AI-driven solutions for a mini watercraft designed to recognize objects in the water—where code efficiency directly translated into higher object-detection performance.",
+    "The experience wrapped up with an exclusive behind-the-scenes look at the iconic NTC proving ground, celebrating a week of teamwork, innovation, and practical problem-solving."
+  ],
+  "tags": [
+    "AutomotiveSoftwareSummerSchool",
+    "PorscheEngineering",
+    "NTC",
+    "UniversitàDelSalento",
+    "Hackathon",
+    "ArtificialIntelligence",
+    "AutomotiveSoftware"
+  ],
+  "linkedinUrl": "https://www.linkedin.com/posts/marcopernisco_an-unforgettable-experience-with-awesome-ugcPost-7242839901581266945-pMhf/",
+  "cover": "summer-school-workbench.webp",
+  "images": [
+    {
+      "file": "summer-school-workbench.webp",
+      "alt": "Summer school participants working at computers beside an orange mini watercraft.",
+      "width": 1600,
+      "height": 1600,
+      "caption": "Working on the mini watercraft at Nardò Technical Center."
+    },
+    {
+      "file": "nardo-participant-badge.webp",
+      "alt": "Marco's Nardò Technical Center participant badge with a Porsche Taycan pictured on it.",
+      "width": 774,
+      "height": 1376
+    },
+    {
+      "file": "porsche-classroom-session.webp",
+      "alt": "A speaker in front of a projected Porsche logo during a classroom session.",
+      "width": 774,
+      "height": 1376
+    },
+    {
+      "file": "watercraft-pool-lineup.webp",
+      "alt": "Participants lining the edge of a swimming pool and lowering orange mini watercraft into the water.",
+      "width": 1280,
+      "height": 1280,
+      "caption": "Testing the mini watercraft in the pool."
+    },
+    {
+      "file": "watercraft-on-the-water.webp",
+      "alt": "Two participants looking towards an orange mini watercraft floating in the pool.",
+      "width": 1280,
+      "height": 1280
+    },
+    {
+      "file": "nardo-proving-ground-banner.webp",
+      "alt": "A Porsche Engineering banner showing an aerial view of the circular Nardò test track.",
+      "width": 1032,
+      "height": 1376
+    },
+    {
+      "file": "summer-school-group.webp",
+      "alt": "A group of summer school participants posing outdoors in front of a blue car.",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "file": "summer-school-dinner.webp",
+      "alt": "Summer school participants around a long dinner table lit by string lights.",
+      "width": 1600,
+      "height": 1201
+    }
+  ],
+  "links": [
+    {
+      "label": "Related LinkedIn post",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7244647868358160384/"
+    }
+  ]
 }
