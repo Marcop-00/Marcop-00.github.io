@@ -1,15 +1,31 @@
 {
-  "draft": true,
-  "title": "Leonardo Hackathon – Space Edition: D.R.A.C.O.",
+  "draft": false,
+  "title": "Telespazio Hackathon – Space Edition: D.R.A.C.O.",
   "category": "Space",
   "date": { "type": "experience", "value": "2026" },
-  "description": "A conceptual proposal for a satellite constellation.",
+  "description": "How a team brainstorm at the 2026 Space Edition became D.R.A.C.O., a conceptual proposal for a satellite constellation.",
   "paragraphs": [
-    "At the Leonardo Hackathon, our team brainstormed and worked across disciplines to develop D.R.A.C.O. as a concept for a satellite constellation. The project stayed at the proposal stage."
+    "How could a satellite constellation help monitor what happens on land, at sea and in orbit? That was our starting point at the 2026 Space Edition.",
+    "My teammates and I came to the question from different disciplines. We spent time thinking it through together, and the brainstorm took shape as D.R.A.C.O., short for Defensive Reconnaissance and Orbital Control System. We presented it at the hackathon as a conceptual proposal for bringing those three kinds of monitoring together in one constellation.",
+    "What I took home from the experience was how much I’d learned from the people around me. Thank you to Alessio Pompeo, Simone Bianchi, Aurelio Arpaia, Michelangelo Dini, Giuseppe Pisano and Caterina Taddei. It was a pleasure working through the idea with all of you.",
+    "Thanks to the teams at Telespazio and e-GEOS for bringing us together for the hackathon."
   ],
   "tags": ["Hackathon", "Satellite constellations"],
-  "linkedinUrl": "",
-  "cover": null,
-  "images": [],
-  "links": []
+  "linkedinUrl": "https://www.linkedin.com/posts/marcopernisco_happy-to-have-been-part-of-this-amazing-hackathon-ugcPost-7465713906389372928-JXC7/",
+  "cover": "draco-team.webp",
+  "images": [
+    {
+      "file": "draco-team.webp",
+      "alt": "The D.R.A.C.O. team in front of a blue slide introducing their satellite constellation proposal.",
+      "width": 1600,
+      "height": 1200,
+      "caption": "With the D.R.A.C.O. team at Telespazio Hackathon’s Space Edition."
+    }
+  ],
+  "links": [
+    {
+      "label": "About the Space Edition",
+      "url": "https://www.e-geos.it/en/news-stories/hackathon-leonardo-space-edition-test-your-talent-and-give-concrete-shape-to-innovation/"
+    }
+  ]
 }
