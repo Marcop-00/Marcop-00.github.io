@@ -1,0 +1,98 @@
+{
+  "draft": false,
+  "title": "AI Summer Program at Beijing Institute of Technology",
+  "category": "Experiences",
+  "date": { "type": "experience", "value": "2026-07" },
+  "description": "Three weeks in Zhuhai, China, and what my first trip that far from home taught me about learning AI.",
+  "paragraphs": [
+    "Can you really learn artificial intelligence in three weeks, 9,000 km away from home?",
+    "Probably not. And that’s exactly what I learned.",
+    "I spent those three weeks at a summer program in AI at Beijing Institute of Technology (BIT) in Zhuhai, China. It was my first time traveling to the other side of the world, and the experience outside the classroom was just as valuable as what I learned inside it.",
+    "I got to experience things that still felt like the future to me. I took a self-driving taxi for the first time, saw drones delivering packages around the city, watched robots deliver food directly to hotel rooms, and even saw robots walking among people in the streets.",
+    "With the university, I also got to visit robotics companies and see how some of the technologies we study are actually being developed and used.",
+    "In 21 days, I obviously didn’t become an AI expert. What I did gain was a better understanding of how much there is still to learn and, more importantly, the motivation to keep learning.",
+    "Living in a completely different environment, dealing with language barriers, adapting to a different academic culture, and simply figuring out everyday life in China pushed me outside my comfort zone. And that’s probably my biggest takeaway.",
+    "So, did I learn AI in three weeks? Not really. But I learned a lot about how I want to keep learning it.",
+    "Grateful to Beijing Institute of Technology, Zhuhai, and everyone who made this experience possible."
+  ],
+  "tags": ["AI", "Robotics", "China"],
+  "linkedinUrl": "https://www.linkedin.com/posts/marcopernisco_can-you-really-learn-artificial-intelligence-ugcPost-7491077643275202561-TF22/",
+  "cover": "bit-zhuhai-sign.webp",
+  "images": [
+    {
+      "file": "bit-zhuhai-sign.webp",
+      "alt": "The Beijing Institute of Technology crest and Zhuhai campus name on a lit wall.",
+      "width": 1200,
+      "height": 1600,
+      "caption": "Beijing Institute of Technology, Zhuhai."
+    },
+    {
+      "file": "bit-campus-steps.webp",
+      "alt": "Marco in a red BIT shirt in front of the blue painted campus steps.",
+      "width": 1276,
+      "height": 1600,
+      "caption": "On campus at BIT."
+    },
+    {
+      "file": "city-street.webp",
+      "alt": "Delivery riders in yellow on a street lined with glass skyscrapers.",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "self-driving-taxi.webp",
+      "alt": "A white and blue self-driving taxi with roof-mounted sensors on a wet street.",
+      "width": 480,
+      "height": 670
+    },
+    {
+      "file": "inside-the-taxi.webp",
+      "alt": "The taxi’s passenger screen shows nearby vehicles, a route map and the estimated arrival time.",
+      "width": 480,
+      "height": 822,
+      "caption": "My first ride in a self-driving taxi."
+    },
+    {
+      "file": "humanoid-robot.webp",
+      "alt": "A black-and-white humanoid robot standing with one arm raised in a showroom.",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "robot-components.webp",
+      "alt": "A robot’s casing, circuit board and jointed legs suspended separately in a display.",
+      "width": 800,
+      "height": 1067
+    },
+    {
+      "file": "electronics-district.webp",
+      "alt": "An overhead sign for International Electronic City above a rainy street.",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "file": "shell-shaped-buildings.webp",
+      "alt": "Two white shell-shaped buildings under a blue sky.",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "file": "temple-interior.webp",
+      "alt": "A smiling wooden statue behind an altar with fruit and colourful ornaments inside a temple.",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "file": "game-of-go.webp",
+      "alt": "Two people playing Go at a stone table as others gather around them.",
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "links": [
+    {
+      "label": "Beijing Institute of Technology, Zhuhai",
+      "url": "https://www.linkedin.com/school/beijing-institute-of-technology-zhuhai/"
+    }
+  ]
+}

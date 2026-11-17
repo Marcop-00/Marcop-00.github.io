@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  {{metadata}}
+  <link rel="icon" href="{{root}}assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="{{root}}style.css">
+  <script src="{{root}}script.js" defer></script>
+  {{galleryScript}}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{root}}index.html#home" aria-label="Marco Pernisco, home"><span class="brand-mark">mp<span>.</span></span><span class="brand-name">Marco Pernisco<span>Software engineer</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="{{root}}index.html#projects">Projects</a>
+        <a href="{{root}}index.html#about">About me</a>
+        <a href="{{root}}index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        <a class="active" href="{{root}}blog.html"{{current}}>Blog</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="{{root}}index.html#projects">Projects</a>
+      <a class="active" href="{{root}}blog.html"{{current}}>Blog</a>
+      <a href="{{root}}index.html#about">About me</a>
+      <a href="{{root}}index.html#contact">Let’s talk ↗</a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    {{content}}
+  </main>
+  <footer class="site-footer container"><a href="{{root}}index.html#home" class="footer-brand">mp<span>.</span></a><p>© <span id="current-year">2026</span> Marco Pernisco</p><p class="footer-note">Built with curiosity. Never quite finished.</p><a href="#main" class="back-top">Back to top ↑</a></footer>
+  {{galleryDialog}}
+</body>
+</html>
