@@ -5,7 +5,7 @@ export const site = 'https://marcop-00.github.io/';
 const categories = ['Experiences', 'Projects', 'Space', 'Events'];
 const dateLabels = { experience: 'Experience date', linkedin: 'LinkedIn post date' };
 const blogTitle = 'Blog — Marco Pernisco';
-const blogDescription = 'A personal archive of projects, events and experiences I’ve shared on LinkedIn, with notes and original photos.';
+const blogDescription = 'Stories from projects, events and experiences, with personal reflections and original photos.';
 const htmlEntities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 const escapeHTML = value => value.replace(/[&<>"']/g, char => htmlEntities[char]);
 const isText = value => typeof value === 'string' && value.trim().length > 0;
@@ -40,14 +40,17 @@ async function readPost(directory, slug) {
     requireField(Object.hasOwn(dateLabels, post.date?.type) && isDate(post.date.value),
       'Use a valid date (YYYY, YYYY-MM or YYYY-MM-DD) and type (experience or linkedin).');
     requireField(isTextList(post.paragraphs) && post.paragraphs.length > 0, 'Add at least one paragraph.');
+    requireField(post.sections === undefined || (Array.isArray(post.sections) && post.sections.every(section =>
+      isText(section?.heading) && isTextList(section.paragraphs) && section.paragraphs.length > 0)),
+      'Use section headings with at least one paragraph in each section.');
     requireField(isTextList(post.tags), '"tags" must be an array of text labels.');
     requireField(Array.isArray(post.links) && post.links.every(link => isText(link?.label) && getHttpsUrl(link.url)),
       '"links" must be an array of labels and HTTPS URLs.');
 
     const linkedin = getHttpsUrl(post.linkedinUrl);
-    requireField(linkedin && /^(?:www\.)?linkedin\.com$/.test(linkedin.host)
-      && /^\/(?:posts|feed\/update|pulse)\/[^/]+/.test(linkedin.pathname),
-      'Add the original LinkedIn post permalink.');
+    requireField(post.linkedinUrl === undefined || (linkedin && /^(?:www\.)?linkedin\.com$/.test(linkedin.host)
+      && /^\/(?:posts|feed\/update|pulse)\/[^/]+/.test(linkedin.pathname)),
+      'Use an original LinkedIn post permalink, or omit "linkedinUrl" for blog-only articles.');
 
     requireField(Array.isArray(post.images) && post.images.length > 0, 'Add at least one original photo.');
     const filenames = new Set();
@@ -154,6 +157,10 @@ function renderPhoto(image, isCover = false) {
 
 function renderArticle(post) {
   const photos = post.images.filter(image => image !== post.cover);
+  const articleLinks = [
+    ...(post.linkedinUrl ? [{ label: 'View original post on LinkedIn', url: post.linkedinUrl }] : []),
+    ...post.links
+  ];
   return `<article class="blog-article container" aria-labelledby="article-title">
       <header class="article-header article-column">
         <a class="text-link article-back" href="../../blog.html"><span aria-hidden="true">←</span> Back to blog</a>
@@ -164,6 +171,10 @@ function renderArticle(post) {
       ${renderPhoto(post.cover, true)}
       <div class="article-body article-column">
         ${post.paragraphs.map(paragraph => `<p>${escapeHTML(paragraph)}</p>`).join('\n        ')}
+        ${(post.sections ?? []).map(section => `<section class="article-section">
+          <h2>${escapeHTML(section.heading)}</h2>
+          ${section.paragraphs.map(paragraph => `<p>${escapeHTML(paragraph)}</p>`).join('\n          ')}
+        </section>`).join('\n        ')}
       </div>
       ${photos.length ? `<section class="article-gallery" aria-labelledby="gallery-title">
         <h2 id="gallery-title">Photos</h2>
@@ -173,10 +184,9 @@ function renderArticle(post) {
       </section>` : ''}
       <footer class="article-footer article-column">
         ${post.tags.length ? `<ul class="tags article-tags" aria-label="Tags">${post.tags.map(tag => `<li><span>${escapeHTML(tag)}</span></li>`).join('')}</ul>` : ''}
-        <ul class="article-links" aria-label="Article links">
-          <li><a class="text-link" href="${escapeHTML(post.linkedinUrl)}">View original post on LinkedIn <span aria-hidden="true">↗</span></a></li>
-          ${post.links.map(link => `<li><a class="text-link" href="${escapeHTML(link.url)}">${escapeHTML(link.label)} <span aria-hidden="true">↗</span></a></li>`).join('\n          ')}
-        </ul>
+        ${articleLinks.length ? `<ul class="article-links" aria-label="Article links">
+          ${articleLinks.map(link => `<li><a class="text-link" href="${escapeHTML(link.url)}">${escapeHTML(link.label)} <span aria-hidden="true">↗</span></a></li>`).join('\n          ')}
+        </ul>` : ''}
       </footer>
     </article>`;
 }
