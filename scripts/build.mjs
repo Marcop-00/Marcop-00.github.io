@@ -9,7 +9,7 @@ const posts = await loadBlog(root);
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-for (const file of ['index.html', 'style.css', 'script.js', 'robots.txt', '.nojekyll', 'IMG_0082.jpeg']) {
+for (const file of ['index.html', 'style.css', 'script.js', 'robots.txt', '.nojekyll']) {
   await copyFile(new URL(file, root), new URL(file, output));
 }
 await cp(new URL('assets/', root), new URL('assets/', output), {

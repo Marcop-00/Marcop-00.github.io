@@ -43,6 +43,7 @@ async function readPost(directory, slug) {
     requireField(post.sections === undefined || (Array.isArray(post.sections) && post.sections.every(section =>
       isText(section?.heading) && isTextList(section.paragraphs) && section.paragraphs.length > 0)),
       'Use section headings with at least one paragraph in each section.');
+    requireField(post.gallery === undefined || typeof post.gallery === 'boolean', '"gallery" must be true or false.');
     requireField(isTextList(post.tags), '"tags" must be an array of text labels.');
     requireField(Array.isArray(post.links) && post.links.every(link => isText(link?.label) && getHttpsUrl(link.url)),
       '"links" must be an array of labels and HTTPS URLs.');
@@ -68,6 +69,16 @@ async function readPost(directory, slug) {
     }
     const cover = post.images.find(image => image.file === post.cover);
     requireField(cover, '"cover" must match the filename of one of the photos.');
+    const placedPhotos = new Set();
+    for (const section of post.sections ?? []) {
+      requireField(section.images === undefined || (Array.isArray(section.images)
+        && section.images.every(file => filenames.has(file))),
+        'Section images must reference filenames listed in "images".');
+      for (const file of section.images ?? []) {
+        requireField(file !== post.cover && !placedPhotos.has(file), `Place each photo only once: ${file}.`);
+        placedPhotos.add(file);
+      }
+    }
 
     return { ...post, cover, slug, directory };
   } catch (error) {
@@ -155,8 +166,14 @@ function renderPhoto(image, isCover = false) {
         </figure>`;
 }
 
+function getGalleryPhotos(post) {
+  const placed = new Set((post.sections ?? []).flatMap(section => section.images ?? []));
+  return post.gallery === false ? [] : post.images.filter(image => image !== post.cover && !placed.has(image.file));
+}
+
 function renderArticle(post) {
-  const photos = post.images.filter(image => image !== post.cover);
+  const photos = getGalleryPhotos(post);
+  const imagesByFile = new Map(post.images.map(image => [image.file, image]));
   const articleLinks = [
     ...(post.linkedinUrl ? [{ label: 'View original post on LinkedIn', url: post.linkedinUrl }] : []),
     ...post.links
@@ -174,6 +191,9 @@ function renderArticle(post) {
         ${(post.sections ?? []).map(section => `<section class="article-section">
           <h2>${escapeHTML(section.heading)}</h2>
           ${section.paragraphs.map(paragraph => `<p>${escapeHTML(paragraph)}</p>`).join('\n          ')}
+          ${section.images?.length ? `<div class="article-inline-photos">
+            ${section.images.map(file => renderPhoto(imagesByFile.get(file))).join('\n            ')}
+          </div>` : ''}
         </section>`).join('\n        ')}
       </div>
       ${photos.length ? `<section class="article-gallery" aria-labelledby="gallery-title">
@@ -192,6 +212,8 @@ function renderArticle(post) {
 }
 
 function renderGalleryDialog(post) {
+  const photoCount = 1 + (post.sections ?? []).reduce((count, section) => count + (section.images?.length ?? 0), 0)
+    + getGalleryPhotos(post).length;
   return `<dialog class="photo-viewer" aria-labelledby="photo-viewer-title">
     <div class="photo-viewer-inner">
       <header class="photo-viewer-header">
@@ -201,9 +223,9 @@ function renderGalleryDialog(post) {
       ${renderImage(post.cover, `photos/${post.cover.file}`)}
       <p class="photo-viewer-caption" hidden></p>
       <div class="photo-viewer-controls">
-        <button type="button" data-previous${post.images.length === 1 ? ' hidden' : ''}><span aria-hidden="true">←</span> Previous</button>
+        <button type="button" data-previous${photoCount === 1 ? ' hidden' : ''}><span aria-hidden="true">←</span> Previous</button>
         <p class="photo-viewer-counter" aria-hidden="true"></p>
-        <button type="button" data-next${post.images.length === 1 ? ' hidden' : ''}>Next <span aria-hidden="true">→</span></button>
+        <button type="button" data-next${photoCount === 1 ? ' hidden' : ''}>Next <span aria-hidden="true">→</span></button>
       </div>
       <p class="photo-viewer-status" role="status"></p>
     </div>
@@ -220,7 +242,7 @@ export async function writeBlog(root, output, posts) {
     const fields = { ...values, styleVersion };
     return template.replace(/{{(\w+)}}/g, (_, key) => fields[key]);
   };
-  const shareImage = { path: 'assets/favicon.png', alt: 'Marco Pernisco portfolio logo' };
+  const shareImage = { path: 'assets/og-marco-pernisco.jpg', alt: 'Marco Pernisco — Software engineer. Portrait of Marco outdoors.' };
   await writeFile(new URL('blog.html', output), page({
     metadata: renderMetadata(blogTitle, blogDescription, 'blog.html', shareImage),
     root: '', current: ' aria-current="page"', galleryScript: '', galleryDialog: '',

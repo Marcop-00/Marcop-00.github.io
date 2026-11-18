@@ -27,6 +27,10 @@
         "There's one little detail that still makes me smile.",
         "After spending entire days speaking English, I would return to my room and call my parents or friends back in Italy. And somehow, speaking Italian again felt strangely unusual!",
         "It was a funny feeling, but also a sign that, without even realizing it, I was adapting to a completely new everyday life."
+      ],
+      "images": [
+        "old-town-street.webp",
+        "hamburg-town-hall.webp"
       ]
     },
     {
@@ -41,6 +45,14 @@
         "The beautiful lights, the festive atmosphere, the smell of warm Glühwein, Bratwurst, Currywurst, Lebkuchen, Zimtsterne, and so many other delicious things.",
         "I had seen German Christmas markets in pictures before, but experiencing them in person, surrounded by friends, was something else entirely.",
         "Those are the kinds of moments that stay with you."
+      ],
+      "images": [
+        "central-train-station.webp",
+        "castle-walk.webp",
+        "hannover-town-hall.webp",
+        "berlin-cathedral.webp",
+        "currywurst-and-fries.webp",
+        "brandenburg-gate.webp"
       ]
     },
     {
@@ -72,6 +84,11 @@
         "And most importantly, I met some incredible people with whom I shared moments I'll never forget.",
         "If I could go back in time, I would make the same decision all over again.",
         "Without hesitation."
+      ],
+      "images": [
+        "berlin-tv-tower.webp",
+        "berlin-reichstag.webp",
+        "hamburg-speicherstadt.webp"
       ]
     },
     {
@@ -170,5 +187,6 @@
       "height": 1600
     }
   ],
-  "links": []
+  "links": [],
+  "gallery": false
 }

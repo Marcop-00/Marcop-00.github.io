@@ -20,7 +20,9 @@ Open http://127.0.0.1:4173 and select **Blog**. Run the build again after editin
 - `scripts/blog.mjs`, `scripts/templates/blog.html` and `scripts/gallery.js`: blog generation, shared page template and photo viewer.
 - `style.css`: orange palette, typography, responsive layouts and project illustrations.
 - `script.js`: project details, filters, shared mobile navigation and email copy.
-- `IMG_0082.jpeg`: personal photograph in the hero section.
+- `IMG_0082.jpeg`: original personal photograph, kept as a source and excluded from the build output.
+- `assets/marco-portrait-*.webp` and `assets/marco-portrait.jpg`: responsive home-page portrait and JPEG fallback.
+- `assets/og-marco-pernisco.jpg`: 1200 × 630 social sharing image for the home page and blog archive.
 - `assets/favicon.png`: the site's favicon.
 
 Project illustrations represent the subjects of the projects; they are not product screenshots. Each detail view separates the project context from the personal contribution. Content is based on the available CV and profile notes, with the lending project's README used for its technical description.
@@ -56,7 +58,7 @@ Create `content/blog/<slug>/post.json` and place the article’s web-ready photo
 
 1. Choose `Experiences`, `Projects`, `Space` or `Events`. Use `experience` for the event date or `linkedin` for the LinkedIn post date. Enter the precision you can verify as `YYYY`, `YYYY-MM` or `YYYY-MM-DD`. The archive sorts by the supplied ISO date, newest first.
 2. Write a short `description` and put each introductory paragraph in its own string in `paragraphs`. For longer articles, optionally add `sections`, an array of objects with a `heading` and a `paragraphs` array. Add the permalink to your original post in `linkedinUrl`, or omit that field for articles written only for the blog. For optional GitHub, demo or reference links, add entries to `links` with a `label` and an HTTPS `url`.
-3. List each photo once in `images`, with its actual exported dimensions, descriptive `alt` text and optional `caption`. Set `cover` to one of those filenames. The cover opens in the viewer first, followed by the remaining photos in array order.
+3. List each photo once in `images`, with its actual exported dimensions, descriptive `alt` text and optional `caption`. Set `cover` to one of those filenames. To place photos after a section's text, add an `images` array of filenames to that section. Each photo can appear in one section only; the cover stays at the top. Unplaced photos appear in the final gallery by default. Set `gallery` to `false` to hide that final gallery. The viewer follows the order of photos on the page.
 4. Export the original photos as WebP, AVIF or compressed JPEG, keeping their proportions. For example, with `cwebp` installed, use `cwebp -q 82 -resize 1600 0 original.jpg -o group-photo.webp` for a landscape original wider than 1600 px. Use `-resize 0 1600` for a portrait original taller than 1600 px. Use lowercase filenames with hyphens. The archive crops cover previews to fit the cards. The article and photo viewer show the whole image.
 5. Set `draft` to `false` once the copy and photos are ready and any links have been checked, then rebuild and preview. The build excludes draft pages and photos from `dist/` and reports missing fields or files for articles marked ready. Draft files committed to a public repository are visible in the repository itself.
 
